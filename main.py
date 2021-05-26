@@ -1,5 +1,6 @@
 import random
-def game(comp , you):
+import time
+def game(comp , you): #made a functuon to choose winner or returns who wins
     if comp == you:
         return None
     if comp == 's':
@@ -18,26 +19,44 @@ def game(comp , you):
         elif you == 'g':
             return False
 
+print('''A wild COMPUTER wants to battle!
+
+    ''')
+
 
 
 
 
     
     
-print("computer's turn snake(s) gun(g) or water(w?")
-rand= random.randint(1,3)
+
+print('''What do you choose
+''')
+
+you = input("Snake(s) Gun(g) or Water(w)?\n") #taking input from user 
+
+rand= random.randint(1,3) #using randint from random module
 if rand == 1:
     comp = 's'
 elif rand == 2:
     comp = 'g'
 elif rand == 3:
     comp = 'w'
-you = input("your turn snake(s) gun(g) or water(w?")
+time.sleep(0.5)
+print(f'''
+Computer choosed {comp} and you choosed {you}''')
 
 a = game(comp, you)
 if a == None:
     print("The game is tie!")
 elif a:
-    print("You win!")
+    print('''
+Lucky FAM 
+You won!
+Enojy''')
 else:
-    print("You loose!")
+
+    print('''
+Ouch you lost better luck next time bro 
+You lost! Go and die ''')
+
